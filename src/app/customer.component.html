@@ -1,0 +1,111 @@
+<div class="container">
+	<br/>
+		<h1> Web Programming: Assignment 2</h1>
+		<h5>By Yaser Sufi (1060316)</h5>
+		<br/>
+			<h2 class="alert alert-success">Customer Management</h2>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						Customer Name:
+					</div>
+					<div class="col-sm">
+						<input type="text" #inName/>
+    </div>
+
+  </div>
+    <div class="row">
+    <div class="col-sm">
+<input class="btn btn-success" type="button" value="Add Customer" (click)="addCustomer(inName.value);inName.value=''"/>   
+    </div>
+    <div class="col-sm">
+  
+    </div>
+
+  </div>
+</div>
+<br/><br/>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      Customer ID:
+    </div>
+    <div class="col-sm">
+     <input type="number" #inID/>
+    </div>
+
+  </div>
+    <div class="row">
+    <div class="col-sm">
+<input class="btn btn-danger" type="button" value="Delete Customer" (click)="(inID.value=='')?{}:delCustomer(inID.value);inID.value=''"/>
+    </div>
+    <div class="col-sm">
+  
+    </div>
+
+  </div>
+</div>
+
+<br/>
+<h2 class="alert alert-success">Transaction Management</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      Customer ID:
+    </div>
+    <div class="col-sm">
+     <input type="number" #inTrxID/>
+    </div>
+
+  </div>
+   <div class="row">
+     
+    <div class="col-sm">
+      Amount:
+    </div>
+    <div class="col-sm">
+     <input type="number" #inAmount/>
+    </div>
+
+  </div>
+   <div class="row">
+     
+    <div class="col-sm">
+     <input class="btn btn-success" type="button" value="Deposit" (click)="(inTrxID.value==''||inAmount.value=='')?{}:transact(inTrxID.value,inAmount.value,1);inID.value=''"/>
+    </div>
+    <div class="col-sm">
+   <input class="btn btn-danger" type="button" value="Withdraw" (click)="(inTrxID.value==''||inAmount.value=='')?{}:transact(inTrxID.value,inAmount.value,-1);inID.value=''"/>
+    </div>
+     <div class="col-sm">
+ 
+    </div>
+      <div class="col-sm">
+ 
+    </div>
+
+  </div>
+</div>
+
+<br/>
+<br/>
+<h2 class="alert alert-success">Customer List: </h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Balance</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let customer of ListX">
+    <tr>
+      <td>{{customer.cID}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.balance}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
